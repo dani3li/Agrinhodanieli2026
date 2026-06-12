@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFeira Local - Marketplace Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🌱 EcoFeira Local</h1>
+                <p class="tagline">Agro Forte e Futuro Sustentável</p>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#producers">Quem Produz</a></li>
+                    <li><a href="#catalog">Catálogo</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Consumo Consciente, Impacto Positivo</h2>
+            <p>Conectando você aos melhores produtores locais. Reduzindo a pegada de carbono, construindo um futuro mais verde.</p>
+            <button class="cta-button">Explore Agora</button>
+        </div>
+    </section>
+
+    <!-- QUEM PRODUZ SECTION -->
+    <section class="producers" id="producers">
+        <div class="container">
+            <h2 class="section-title">Quem Produz</h2>
+            <p class="section-subtitle">Conheça as histórias dos produtores locais que alimentam nossa comunidade</p>
+            
+            <div class="producers-grid">
+                <!-- Card 1 -->
+                <div class="producer-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #6BA140, #8BC64D);">
+                        <span class="badge">Orgânico</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>João Silva - Fazenda Verde Vale</h3>
+                        <p class="producer-location">🌍 Interior de São Paulo</p>
+                        <p class="producer-description">
+                            João cultiva hortaliças orgânicas há 15 anos. Sua fazenda utiliza técnicas agroecológicas e compostagem natural para manter o solo fértil e saudável.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Alfaces</span>
+                            <span class="tag">Tomates</span>
+                            <span class="tag">Orgânico</span>
+                        </div>
+                        <button class="learn-more-btn" onclick="showProducerInfo('João Silva - Fazenda Verde Vale', 'Especializado em hortaliças orgânicas com técnicas agroecológicas há 15 anos. Entrega semanal e certificado de sustentabilidade.')">Saber Mais</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="producer-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #C17E2C, #E6B84D);">
+                        <span class="badge">Sazonais</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Maria Santos - Pomar Familiar</h3>
+                        <p class="producer-location">🌍 Região Serrana</p>
+                        <p class="producer-description">
+                            Maria cultiva frutas sazonais e mel artesanal. Seus produtos não usam agrotóxicos e respeitam o ciclo natural das estações.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Maçãs</span>
+                            <span class="tag">Mel</span>
+                            <span class="tag">Sazonais</span>
+                        </div>
+                        <button class="learn-more-btn" onclick="showProducerInfo('Maria Santos - Pomar Familiar', 'Frutas sazonais e mel puro. Cultivo natural respeitando as estações. Famoso por suas maçãs e mel de qualidade superior.')">Saber Mais</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="producer-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #8B5A3C, #A0826D);">
+                        <span class="badge">Especialidade</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Carlos Oliveira - Grãos Sustentáveis</h3>
+                        <p class="producer-location">🌍 Planalto Central</p>
+                        <p class="producer-description">
+                            Carlos produz grãos especiais usando rotação de culturas e fixação biológica de nitrogênio, preservando a biodiversidade do solo.
+                        </p>
+                        <div class="card-tags">
+                            <span class="tag">Milho</span>
+                            <span class="tag">Feijão</span>
+                            <span class="tag">Sustentável</span>
+                        </div>
+                        <button class="learn-more-btn" onclick="showProducerInfo('Carlos Oliveira - Grãos Sustentáveis', 'Especialista em grãos com rotação de culturas. Preserva biodiversidade e solo fértil. Certificado de sustentabilidade ambiental.')">Saber Mais</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <h2 class="section-title">Catálogo de Produtos</h2>
+            <p class="section-subtitle">Filtre nossos produtos e encontre o que você procura</p>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('todos')">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('organicos')">Orgânicos</button>
+                <button class="filter-btn" onclick="filterProducts('sazonais')">Sazonais</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card" data-category="organicos">
+                    <div class="product-image" style="background-image: url('imagens/alface_crespa_organica_und2790233.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="product-info">
+                        <h3>Alface Orgânica</h3>
+                        <p class="product-producer">de João Silva</p>
+                        <p class="product-price">R$ 8,90</p>
+                        <div class="product-details">
+                            <span class="detail-badge">Orgânico</span>
+                            <span class="detail-badge">Fresco</span>
+                        </div>
+                        <button class="add-interest-btn" onclick="addToInterest('Alface Orgânica')">+ Interesse</button>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card" data-category="organicos">
+                    <div class="product-image" style="background-image: url('imagens/tomate cereja.webp'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tomate Cereja Orgânico</h3>
+                        <p class="product-producer">de João Silva</p>
+                        <p class="product-price">R$ 12,50</p>
+                        <div class="product-details">
+                            <span class="detail-badge">Orgânico</span>
+                            <span class="detail-badge">Premium</span>
+                        </div>
+                        <button class="add-interest-btn" onclick="addToInterest('Tomate Cereja Orgânico')">+ Interesse</button>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card" data-category="sazonais">
+                    <div class="product-image" style="background: linear-gradient(135deg, #F39C12, #E67E22);">
+                        🍎
+                    </div>
+                    <div class="product-info">
+                        <h3>Maçã Vermelha Sazonais</h3>
+                        <p class="product-producer">de Maria Santos</p>
+                        <p class="product-price">R$ 15,00</p>
+                        <div class="product-details">
+                            <span class="detail-badge">Sazonais</span>
+                            <span class="detail-badge">Natural</span>
+                        </div>
+                        <button class="add-interest-btn" onclick="addToInterest('Maçã Vermelha')">+ Interesse</button>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card" data-category="sazonais">
+                    <div class="product-image" style="background-image: url('imagens/mel.webp'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mel Puro Artesanal</h3>
+                        <p class="product-producer">de Maria Santos</p>
+                        <p class="product-price">R$ 35,00</p>
+                        <div class="product-details">
+                            <span class="detail-badge">Sazonais</span>
+                            <span class="detail-badge">Premium</span>
+                        </div>
+                        <button class="add-interest-btn" onclick="addToInterest('Mel Puro Artesanal')">+ Interesse</button>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card" data-category="organicos">
+                    <div class="product-image" style="background-image: url('imagens/feijão.png'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="product-info">
+                        <h3>Feijão Orgânico</h3>
+                        <p class="product-producer">de Carlos Oliveira</p>
+                        <p class="product-price">R$ 18,00</p>
+                        <div class="product-details">
+                            <span class="detail-badge">Orgânico</span>
+                            <span class="detail-badge">Grão</span>
+                        </div>
+                        <button class="add-interest-btn" onclick="addToInterest('Feijão Orgânico')">+ Interesse</button>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product-card" data-category="sazonais">
+                    <div class="product-image" style="background-image: url('imagens/milho.webp'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="product-info">
+                        <h3>Milho Sazonais Premium</h3>
+                        <p class="product-producer">de Carlos Oliveira</p>
+                        <p class="product-price">R$ 10,00</p>
+                        <div class="product-details">
+                            <span class="detail-badge">Sazonais</span>
+                            <span class="detail-badge">Fresco</span>
+                        </div>
+                        <button class="add-interest-btn" onclick="addToInterest('Milho Premium')">+ Interesse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EcoFeira Local</h4>
+                    <p>Conectando consumidores conscientes a pequenos produtores sustentáveis.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#producers">Produtores</a></li>
+                        <li><a href="#catalog">Catálogo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📧 contato@ecofeira.com.br</p>
+                    <p>📱 (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoFeira Local. Realizado com ❤️ e sustentabilidade.</p>
+                <p class="agrinho-info">
+                    <strong>Concurso Agrinho:</strong> Promovendo educação ambiental e agricultura sustentável para gerações futuras.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
